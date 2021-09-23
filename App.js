@@ -5,6 +5,7 @@ import Cita from './componentes/Cita';
 import Formulario from './componentes/Formulario';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Colors from './src/utils/colors';
+
 const App = () => {
 // definir el state de citas
 const [citas, setCitas] = useState([]);
