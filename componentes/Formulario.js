@@ -47,8 +47,7 @@ const hideDatePicker = () => {
         propietario.trim() === '' ||
         telefono.trim() === '' ||
         fecha.trim() === '' ||
-        hora.trim() === '' ||
-        sintomas.trim() === '')
+        hora.trim() === '')
     {
         // Falla la validación
         mostrarAlerta();
@@ -90,14 +89,14 @@ return (
 <>
 <ScrollView style={styles.formulario}>
 <View>
-    <Text style={styles.label}>Paciente:</Text>
+    <Text style={styles.label}>Reservacion a nombre de:</Text>
     <TextInput
         style={styles.input}
         onChangeText={ texto => guardarPaciente(texto) }
     />
 </View>
 <View>
-    <Text style={styles.label}>Dueño:</Text>
+    <Text style={styles.label}>Seccion de fumadores:</Text>
     <TextInput
         style={styles.input}
         onChangeText={ texto => guardarPropietario(texto) }
@@ -142,17 +141,9 @@ return (
     <Text>{hora}</Text>
 </View>
 <View>
-    <Text style={styles.label}>Síntomas:</Text>
-    <TextInput
-        multiline
-        style={styles.input}
-        onChangeText={ texto => guardarSintomas(texto) }
-    />
-</View>
-<View>
     <TouchableHighlight onPress={ () => crearNuevaCita() }
         style={styles.btnSubmit}>
-        <Text style={styles.textoSubmit}>Crear Nueva Cita</Text>
+        <Text style={styles.textoSubmit}>Guardar Reservacion</Text>
     </TouchableHighlight>
 </View>
 </ScrollView>
@@ -181,13 +172,14 @@ borderStyle: 'solid'
 },
 btnSubmit: {
 padding: 10,
-backgroundColor:colors.BUTTON_COLOR,
+backgroundColor: '#ff0000',
 marginVertical: 10
 },
 textoSubmit: {
 color: '#FFF',
 fontWeight: 'bold',
-textAlign: 'center'
+textAlign: 'center',
+fontSize: 20,
 }
 })
 export default Formulario;

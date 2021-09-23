@@ -48,17 +48,17 @@ const guardarCitasStorage = async (citasJSON) => {
   return (
   <TouchableWithoutFeedback onPress={() => cerrarTeclado() }>
   <View style={styles.contenedor}>
-  <Text style={styles.titulo}>Administrador de Citas</Text>
+  <Text style={styles.titulo}>Reservas en restaurante</Text>
   <View>
   <TouchableHighlight onPress={ () => mostrarFormulario() }
   style={styles.btnMostrarForm}>
-  <Text style={styles.textoMostrarForm}> {mostrarform ? 'Cancelar Crear Cita' : 'Crear Nueva Cita'} </Text>
+  <Text style={styles.textoMostrarForm}> {mostrarform ? '- Cancelar Reservacion' : '+ Crear Nueva Reservacion'} </Text>
   </TouchableHighlight>
   </View>
   <View style={styles.contenido}>
   { mostrarform ? (
   <>
-  <Text style={styles.titulo}>Crear Nueva Cita</Text>
+  <Text style={styles.titulo}>Crear Nueva Reservacion</Text>
   <Formulario
   citas={citas}
   setCitas={setCitas}
@@ -68,8 +68,8 @@ const guardarCitasStorage = async (citasJSON) => {
   </>
   ) : (
   <>
-  <Text style={styles.titulo}> {citas.length > 0 ? 'Administra tus citas' :
-  'No hay citas, agrega una'} </Text>
+  <Text style={styles.titulo}> {citas.length > 0 ? 'Administra tu Reservacion' :
+  'No hay recervacion, deberias agregar una'} </Text>
   <FlatList
   style={styles.listado}
   data={citas}
@@ -87,9 +87,10 @@ const guardarCitasStorage = async (citasJSON) => {
   
 const styles = StyleSheet.create({
   contenedor: {
-  backgroundColor: Colors.PRIMARY_COLOR,
+  backgroundColor: '#2e8b57',
   flex: 1
   },
+  
   titulo: {
   color: '#FFF',
   marginTop: Platform.OS === 'ios' ? 40 : 20 ,
@@ -98,6 +99,7 @@ const styles = StyleSheet.create({
   fontWeight: 'bold',
   textAlign: 'center'
   },
+
   contenido: {
   flex: 1,
   marginHorizontal: '2.5%',
@@ -105,15 +107,18 @@ const styles = StyleSheet.create({
   listado: {
   flex: 1,
   },
+
   btnMostrarForm: {
   padding: 10,
-  backgroundColor:Colors.BUTTON_COLOR,
+  backgroundColor: '#B22222',
   marginVertical: 10
   },
+
   textoMostrarForm: {
   color: '#FFF',
   fontWeight: 'bold',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontSize: 30,
   }
   });
   export default App;

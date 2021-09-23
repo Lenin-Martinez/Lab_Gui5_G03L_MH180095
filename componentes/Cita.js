@@ -8,24 +8,18 @@ eliminarPaciente(id);
 return (
     <View style={styles.cita}>
         <View>
-            <Text style={styles.label}>Paciente: </Text>
+            <Text style={styles.label}>Reservacion a nombre de : </Text>
             <Text style={styles.texto}>{item.paciente}</Text>
         </View>
 
         <View>
-            <Text style={styles.label}>Propietario: </Text>
+            <Text style={styles.label}>Seccion de fumadores: </Text>
             <Text style={styles.texto}>{item.propietario}</Text>
         </View>
-
-        <View>
-            <Text style={styles.label}>Síntomas: </Text>
-            <Text style={styles.texto}>{item.sintomas}</Text>
-        </View>
-
         <View>
             <TouchableHighlight onPress={ () => dialogoEliminar(item.id) }
                 style={styles.btnEliminar}>
-                <Text style={styles.textoEliminar}> Eliminar &times; </Text>
+                <Text style={styles.textoEliminar}>X Eliminar</Text>
             </TouchableHighlight>
         </View>
     </View>
